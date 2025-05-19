@@ -12,7 +12,7 @@ body{
     place-content: center;
     min-height: 100vh;
     user-select: none;
-    background: #eee;
+    background: #929292;
 }
 
 main{
@@ -21,19 +21,22 @@ main{
     display: flex;
     border: 5px solid #000000;
     border-radius: 60px;
+    position: relative;
 }
 
 section{
-    background-color: #f6f6f6;
-    border-radius: 60px;
+    background-color: #d9d9d9;
+    border-radius: 55px;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     overflow: hidden;
-    position: relative;
-    padding: 16px 12px;
+    position: relative; /*Cuando pongamos el position absolute en el header, el header se posicionará segun este elemento*/
+    padding: 16px 6px;
+    gap: 10px;
     justify-content: center;
-    box-shadow: 10px 10px 10px rgb(80, 80, 80);
+    align-items: center;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 header{
@@ -42,6 +45,102 @@ header{
 }
 
 header img{
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
+}
+
+
+footer{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    padding: 0 24px;
+    justify-content: center;
+    align-items: center;
+
+    & button{
+        background: url('/images/icons/tinder-icons.webp') no-repeat;
+        background-position: 0px 0px;
+        background-size: 175px;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        border: 0;
+        cursor: pointer;
+        transition: scale .3s ease;
+    }
+
+    & :hover{
+        scale: 1.2;
+    }
+
+    & .is-big {
+        background-size: 250px;
+        width: 42px;
+        height: 42px;
+    }
+    & .is-undo {
+        background-position: -142px 0;
+    }
+
+    & .is-remove {
+        background-position: -154px 0;
+    }
+
+    & .is-fav {
+        background-position: -52px 0;
+    }
+
+    & .is-star {
+        background-position: -71px 0px;
+    }
+}
+
+.cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    & article{
+        border-radius: 50px;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
+        cursor: grab;
+        overflow: hidden;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        & h2{
+            color: white;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            height: 100%;
+            width: 100%;
+            padding: 16px;
+            z-index: 3;
+            background: linear-gradient(to top,
+                #00000088 20%,
+                transparent 40%);
+        }
+
+        & span{
+            margin-left: 10px;
+            font-size: 1.3rem;
+            font-weight: lighter;
+        }
+    }
+
+
+
 }
