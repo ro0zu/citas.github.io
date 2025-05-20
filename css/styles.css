@@ -68,6 +68,7 @@ footer{
         border: 0;
         cursor: pointer;
         transition: scale .3s ease;
+        z-index: 3;
     }
 
     & :hover{
