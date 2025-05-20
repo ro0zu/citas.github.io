@@ -30,7 +30,6 @@ section{
     width: 100%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     position: relative; /*Cuando pongamos el position absolute en el header, el header se posicionará segun este elemento*/
     padding: 16px 6px;
     gap: 10px;
@@ -58,8 +57,9 @@ footer{
     justify-content: center;
     align-items: center;
 
+
     & button{
-        background: url('/images/icons/tinder-icons.webp') no-repeat;
+        background: url('../images/icons/tinder-icons.webp') no-repeat;
         background-position: 0px 0px;
         background-size: 175px;
         height: 32px;
@@ -68,6 +68,7 @@ footer{
         border: 0;
         cursor: pointer;
         transition: scale .3s ease;
+        opacity: 1;
     }
 
     & :hover{
