@@ -48,7 +48,6 @@ header img{
     height: 24px;
 }
 
-
 footer{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -68,7 +67,6 @@ footer{
         border: 0;
         cursor: pointer;
         transition: scale .3s ease;
-        opacity: 1;
     }
 
     & :hover{
