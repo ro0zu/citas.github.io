@@ -47,11 +47,11 @@ function startDrag(event){
 
     function onEnd (event){
         // remove the event listeners
-        document.removeEventListener('mousemove', onMove)
-        document.removeEventListener('mouseup', onEnd)
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onEnd);
 
-        document.removeEventListener('touchmove', onMove)
-        document.removeEventListener('touchend', onEnd)
+        document.removeEventListener('touchmove', onMove);
+        document.removeEventListener('touchend', onEnd);
 
         // saber si el usuario tomo una decisión
         const decisionMade = Math.abs(pullDeltaX) >= DECISION_THRESHOLD;
@@ -66,9 +66,14 @@ function startDrag(event){
                 actualCard.remove()
             }, { once: true });
         } else {
-            //Añadir clase de acuerdo a que no se ha decidido.
+            //Añadir clase de acuerdo a que no se ha decidido. Cuando no se decide, se quitan las clases go-right y go-left, se añade la .reset, lo que hace que vuelva a posición inicial.
             actualCard.classList.add('reset');
             actualCard.classList.remove('go-right', 'go-left');
+            // Cuando no se decide se vuelve la opacidad a 0
+            actualCard.querySelectorAll('.choice').forEach(choice => {
+                choice.style.opacity = 0;
+            })
+
         }
 
         // reset de variables
@@ -79,6 +84,7 @@ function startDrag(event){
 
             pullDeltaX = 0;
             isAnimating = false;
+            
         });
     }
 }

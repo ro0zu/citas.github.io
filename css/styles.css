@@ -140,6 +140,7 @@ footer{
         &.reset {
             transition: transform .3s ease;
             transform: translateX(0) !important;
+            
         }
 
         & .choice {
