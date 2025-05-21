@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const articles = Array.from(document.querySelectorAll('.cards article')); // Convertimos a Array
     const noMoreMessage = cardsContainer.querySelector('span');
     
-    // Ocultamos el mensaje inicialmente
-    noMoreMessage.style.display = 'none';
     
     // Función para manejar el deslizamiento
     function handleSwipe(direction) {
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('like-button').addEventListener('click', () => {
         console.log('like button');
         handleSwipe('like');
-        
+
     });
     
     document.getElementById('nope-button').addEventListener('click', () => {
