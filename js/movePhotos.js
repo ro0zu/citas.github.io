@@ -3,7 +3,7 @@ let isAnimating = false;
 let pullDeltaX = 0; // Distancia que la card se está arrastrando. Después se ajustará cuanto se tendrá que desplazar para like o nope
 
 function startDrag(event){
-    if (isAnimating) return
+    if (isAnimating) return;
 
     // Con este codigo solo se moverá el article (card) más cercano
     const actualCard = event.target.closest('article');
